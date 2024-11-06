@@ -11,9 +11,9 @@ public class MonthlySalesService {
         return allSales;
     }
 
-    public int average(int [] month) {
+    public int average(int[] month) {
         int allSales = 0;
-        int average=0;
+        int average = 0;
         for (int j : month) {
 
             allSales += j;
@@ -22,6 +22,7 @@ public class MonthlySalesService {
         }
         return average;
     }
+
     public int getMaxDay(int[] month) {
         int maxDay = 0;
         for (int i = 0; i < month.length; i++) {
