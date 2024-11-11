@@ -3,9 +3,9 @@ package ru.netology.MassivDz6.services;
 public class MonthlySalesService {
     public int amountOfSales(int[] month) {
         int allSales = 0;
-        for (int j : month) {
+        for (int i : month) {
 
-            allSales += j;
+            allSales += i;
 
         }
         return allSales;
@@ -14,9 +14,9 @@ public class MonthlySalesService {
     public int average(int[] month) {
         int allSales = 0;
         int average = 0;
-        for (int j : month) {
+        for (int i : month) {
 
-            allSales += j;
+            allSales += i;
             average = allSales / 12;
 
         }
@@ -46,25 +46,43 @@ public class MonthlySalesService {
     }
 
     public int numDayBelowAverage(int[] month) {
-        int k = 0;
+        int numberOfMonth = 0;
+        int allSales = 0;
+        int average = 0;
+        for (int i : month) {
+
+            allSales += i;
+            average = allSales / 12;
+
+        }
+
         for (int i = 0; i < month.length; i++) {
 
-            if (month[i] < average(month)) {
-                k++;
+            if (month[i] < average) {
+                numberOfMonth++;
             }
         }
-        return k;
+        return numberOfMonth;
     }
 
     public int numDayAboveAverage(int[] month) {
-        int k = 0;
+        int numberOfMonth = 0; //объявляем переменную количество месяцев, которые >= среднего
+        int allSales = 0; // обьявляем переменную сумма за год
+        int average = 0; // объявляем переменную среднее значение
+        for (int i : month) {
+
+            allSales += i; // сумма за год
+            average = allSales / 12; // среднее значение
+
+        }
+
         for (int i = 0; i < month.length; i++) {
 
-            if (month[i] >= average(month)) {
-                k++;
+            if (month[i] >= average) {
+                numberOfMonth++;
             }
         }
-        return k;
+        return numberOfMonth;
     }
 
 }
