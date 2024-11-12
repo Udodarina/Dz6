@@ -1,84 +1,64 @@
 package ru.netology.MassivDz6.services;
+//сумма всех продаж
+public class MonthlySalesService  {
+    public long amountOfSales(long[] sales) {
+        long sum = 0; // объявляем переменную для хранения суммы
+        for (long sale : sales) { // проходим по каждому месяцу в году
 
-public class MonthlySalesService {
-    public long amountOfSales(long[] month) {
-        long allSales = 0;
-        for (long i : month) {
-
-            allSales += i;
-
-        }
-        return allSales;
-    }
-
-    public long average(long [] month) {
-        long allSales = 0;
-        long average = 0;
-        for (long i : month) {
-
-            allSales += i;
-            average = allSales / 12;
+            sum += sale; // добавляем выручку за текущий месяц к общей сумме
 
         }
-        return average;
+        return sum; // возвращаем выручку за год
     }
+//метод для расчета средней выручки в месяц
+    public long average(long [] sales) {
 
-    public int getMaxDay(long[] month) {
-        int maxDay = 0;
-        for (int i = 0; i < month.length; i++) {
+        return amountOfSales(sales) /12; // подсчет и возврат среднего значения за месяц
+    }
+//поиск месяца с максимальной выручкой
+    public int getMaxDay(long[] sales) {
+        int maxDay = 0; // индекс месяца с макс продажами
+        for (int i = 0; i < sales.length; i++) {
 
-            if (month[i] >= month[maxDay]) {
-                maxDay = i;
+            if (sales[i] >= sales[maxDay]) {
+                maxDay = i; // обновляем индекс максимума
             }
         }
-        return maxDay;
+        return maxDay; // возвращаем индекс массива с макс значением
     }
-
-    public int getMinDay(long[] month) {
+//метод для нахождения месяца с миним выручкой
+    public int getMinDay(long[] sales) {
         int minDay = 0;
-        for (int i = 0; i < month.length; i++) {
+        for (int i = 0; i < sales.length; i++) {
 
-            if (month[i] <= month[minDay]) {
+            if (sales[i] <= sales[minDay]) {
                 minDay = i;
             }
         }
         return minDay;
     }
-
-    public int numDayBelowAverage(long [] month) {
+// метод для подсчета количества месяцев с продажами ниже среднего
+    public int numDayBelowAverage(long [] sales) {
         int numberOfMonth = 0;
-        long allSales = 0;
-        long average = 0;
-        for (long i : month) {
 
-            allSales += i;
-            average = allSales / 12;
+        long average = average(sales);
+        for (long sale : sales) {
 
-        }
-
-        for (int i = 0; i < month.length; i++) {
-
-            if (month[i] < average) {
+            if (sale < average) {
                 numberOfMonth++;
             }
         }
         return numberOfMonth;
     }
-
-    public int numDayAboveAverage(long[] month) {
+//метод для подсчета количества месяцев с продажами выше средного
+    public int numDayAboveAverage(long[] sales) {
         int numberOfMonth = 0; //объявляем переменную количество месяцев, которые >= среднего
-        long allSales = 0; // обьявляем переменную сумма за год
-        long average = 0; // объявляем переменную среднее значение
-        for (long i : month) {
 
-            allSales += i;
-            average = allSales / 12;
+        long average = average(sales); // объявляем переменную среднее значение
+        for (long sale : sales) {
 
-        }
 
-        for (int i = 0; i < month.length; i++) {
-
-            if (month[i] >= average) {
+            if (sale >= average) {
                 numberOfMonth++;
             }
         }
