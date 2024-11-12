@@ -1,9 +1,9 @@
 package ru.netology.MassivDz6.services;
 
 public class MonthlySalesService {
-    public int amountOfSales(int[] month) {
-        int allSales = 0;
-        for (int i : month) {
+    public long amountOfSales(long[] month) {
+        long allSales = 0;
+        for (long i : month) {
 
             allSales += i;
 
@@ -11,10 +11,10 @@ public class MonthlySalesService {
         return allSales;
     }
 
-    public int average(int[] month) {
-        int allSales = 0;
-        int average = 0;
-        for (int i : month) {
+    public long average(long [] month) {
+        long allSales = 0;
+        long average = 0;
+        for (long i : month) {
 
             allSales += i;
             average = allSales / 12;
@@ -23,7 +23,7 @@ public class MonthlySalesService {
         return average;
     }
 
-    public int getMaxDay(int[] month) {
+    public int getMaxDay(long[] month) {
         int maxDay = 0;
         for (int i = 0; i < month.length; i++) {
 
@@ -34,7 +34,7 @@ public class MonthlySalesService {
         return maxDay;
     }
 
-    public int getMinDay(int[] month) {
+    public int getMinDay(long[] month) {
         int minDay = 0;
         for (int i = 0; i < month.length; i++) {
 
@@ -45,11 +45,11 @@ public class MonthlySalesService {
         return minDay;
     }
 
-    public int numDayBelowAverage(int[] month) {
+    public int numDayBelowAverage(long [] month) {
         int numberOfMonth = 0;
-        int allSales = 0;
-        int average = 0;
-        for (int i : month) {
+        long allSales = 0;
+        long average = 0;
+        for (long i : month) {
 
             allSales += i;
             average = allSales / 12;
@@ -65,14 +65,14 @@ public class MonthlySalesService {
         return numberOfMonth;
     }
 
-    public int numDayAboveAverage(int[] month) {
+    public int numDayAboveAverage(long[] month) {
         int numberOfMonth = 0; //объявляем переменную количество месяцев, которые >= среднего
-        int allSales = 0; // обьявляем переменную сумма за год
-        int average = 0; // объявляем переменную среднее значение
-        for (int i : month) {
+        long allSales = 0; // обьявляем переменную сумма за год
+        long average = 0; // объявляем переменную среднее значение
+        for (long i : month) {
 
-            allSales += i; // сумма за год
-            average = allSales / 12; // среднее значение
+            allSales += i;
+            average = allSales / 12;
 
         }
 

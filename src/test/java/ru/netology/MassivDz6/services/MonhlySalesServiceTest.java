@@ -9,10 +9,10 @@ public class MonhlySalesServiceTest {
     public void sumOfAllSales() {
         MonthlySalesService service = new MonthlySalesService();
 
-        int[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long [] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedDay = 180;
-        int actualDay = service.amountOfSales(month);
+        long expectedDay = 180;
+        long actualDay = service.amountOfSales(month);
 
         Assertions.assertEquals(expectedDay, actualDay);
     }
@@ -22,10 +22,10 @@ public class MonhlySalesServiceTest {
         MonthlySalesService service = new MonthlySalesService();
 
 
-        int[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedDay = 15;
-        int actualDay = service.average(month);
+        long expectedDay = 15;
+        long actualDay = service.average(month);
 
         Assertions.assertEquals(expectedDay, actualDay);
     }
@@ -34,7 +34,7 @@ public class MonhlySalesServiceTest {
     public void numberMaxSales() { // номер элемента массива с максимальной суммой
         MonthlySalesService service = new MonthlySalesService();
 
-        int[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedDay = 7;
         int actualDay = service.getMaxDay(month);
@@ -46,7 +46,7 @@ public class MonhlySalesServiceTest {
     public void numberMinSales() { // номер элемента массива с минимальной суммой
         MonthlySalesService service = new MonthlySalesService();
 
-        int[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedDay = 8;
         int actualDay = service.getMinDay(month);
@@ -58,7 +58,7 @@ public class MonhlySalesServiceTest {
     public void belowAverage() { // количество дней, в которые ежемесячная сумма меньше среднего значения
         MonthlySalesService service = new MonthlySalesService();
 
-        int[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedDay = 5;
         int actualDay = service.numDayBelowAverage(month);
@@ -70,7 +70,7 @@ public class MonhlySalesServiceTest {
     public void aboveAvarage() { // количество дней, в которые ежемесячная сумма больше среднего значения
         MonthlySalesService service = new MonthlySalesService();
 
-        int[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] month = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedDay = 7;
         int actualDay = service.numDayAboveAverage(month);
